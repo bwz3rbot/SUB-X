@@ -46,20 +46,24 @@ async function xpost(post, subs) {
     console.log('XPOSTING: ');
     console.log(post.title);
     for (const sub of subs) {
-        console.log(`X-Posting to r/${sub}...`.grey);
-        if (!await snoolicious.requester.getSubreddit(sub).user_is_subscriber) {
-            console.log(`Was not already subscribed to r/${sub}. Subscribing now...`);
-            await snoolicious.requester.getSubreddit(sub).subscribe();
+        try {
+            console.log(`X-Posting to r/${sub}...`.grey);
+            if (!await snoolicious.requester.getSubreddit(sub).user_is_subscriber) {
+                console.log(`Was not already subscribed to r/${sub}. Subscribing now...`);
+                await snoolicious.requester.getSubreddit(sub).subscribe();
+            }
+            await snoolicious.requester.
+            _newObject('Submission', post, true).submitCrosspost({
+                subredditName: sub,
+                title: post.title,
+                originalPost: this,
+                resubmit: false,
+                sendReplies: true
+            });
+            console.log(`X-Posting success!`.green);
+        } catch (err) {
+            console.log(err);
         }
-        await snoolicious.requester.
-        _newObject('Submission', post, true).submitCrosspost({
-            subredditName: sub,
-            title: post.title,
-            originalPost: this,
-            resubmit: false,
-            sendReplies: true
-        });
-        console.log(`X-Posting success!`.green);
     }
 }
 
