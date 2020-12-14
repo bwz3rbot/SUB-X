@@ -1,0 +1,36 @@
+USER_AGENT='Node.jsv12.18.3:SUBX:v1 (by u/bwz3r)'
+CLIENT_ID='***'
+CLIENT_SECRET='***'
+REDDIT_USER='???'
+REDDIT_PASS='***'
+MASTER_SUB='Bwz3rBot'
+SUBREDDITS='Bwz3rBot, IntWatch, AnotherBotFarm'
+DEBUG_NETWORK='false'
+STARTUP_LIMIT='20'
+SUBMISSION_LIMIT='50'
+INTERVAL='10'
+# FLAIRS
+
+# Guitar
+GUITAR_FLAIR='Guitar'
+GUITAR_SUBS='Electric, Acoustic'
+
+# Bass
+BASS_FLAIR='Bass'
+BASS_SUBS='Standing, Electric'
+
+# Vochals
+VOCHALS_FLAIR='Vochals'
+VOCHALS_SUBS='Singing, Screaming, Rapping'
+
+# Drums
+DRUMS_FLAIR='Drums'
+DRUMS_SUBS='Snare, Kick'
+
+# Vochals
+VOCHALS_FLAIR='Vochals'
+VOCHALS_SUBS='Singing, Screaming, Rapping'
+
+# Theory
+THEORY_FLAIR='Theory'
+THEORY_SUBS='Notes, Rhythm'
